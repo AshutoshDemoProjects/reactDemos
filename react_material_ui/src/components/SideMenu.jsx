@@ -1,6 +1,7 @@
 import React from 'react'
 import { Divider, Grid, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, makeStyles, Paper } from '@material-ui/core'
 import { Dns, FormatListNumbered, NavigateBefore, PeopleOutline } from '@material-ui/icons';
+import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
     sideMenu: {
@@ -52,19 +53,19 @@ export default function SideMenu(props) {
                 }
 
             >
-                <ListItem button component="a" href="userlist">
+                <ListItem button component={NavLink} to="userlist">
                     <ListItemIcon>
                         <PeopleOutline />
                     </ListItemIcon>
                     <ListItemText primary="Users" />
                 </ListItem>
-                <ListItem button component="a" href="productlist">
+                <ListItem button component={NavLink} to="productlist">
                     <ListItemIcon>
                         <Dns />
                     </ListItemIcon>
                     <ListItemText primary="Products" />
                 </ListItem>
-                <ListItem button component="a" href="orderlist">
+                <ListItem button component={NavLink} to="orderlist">
                     <ListItemIcon>
                         <FormatListNumbered />
                     </ListItemIcon>

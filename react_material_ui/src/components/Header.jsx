@@ -4,10 +4,12 @@ import React from 'react';
 
 const useStyles = makeStyles(thyme => ({
     root: {
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        transform: 'translateZ(0)'
     },
     searchItem: {
         opacity: '0.6',
+        width: '100%',
         padding: `0px ${thyme.spacing(1)}px`,
         fontSize: '0.8rem',
         '& :hover': {
@@ -33,10 +35,9 @@ export default function Header(props) {
             <Toolbar>
                 <Grid container alignItems='center'>
                     {title && <Grid style={{ paddingRight: '16px' }}><IconButton onClick={clickHandler}><Dehaze /></IconButton><span className={styles.appTitle}>Demo App</span></Grid>}
-                    <Grid item>
+                    <Grid item sm>
                         <InputBase className={styles.searchItem} placeholder='Seach items' startAdornment={<Search fontSize='small' />} />
                     </Grid>
-                    <Grid item sm />
                     <Grid item>
                         <IconButton>
                             <Badge badgeContent={4} color='secondary'>
